@@ -1,0 +1,53 @@
+h1{
+    text-align:center;
+    color:blue;
+}
+.container{
+    display:grid;
+    grid-template-areas:
+	"header header"
+	"login content"
+	"footer footer";
+    grid-template-columns: 1fr 3fr;
+    gap: 3px;
+    
+}
+.container .header{
+    grid-area:header;
+    text-align:center;
+}
+.container .login{
+    grid-area:login;
+    background-color:#fffffe;
+    border:solid;
+    box-shadow: 5px 10px;
+}
+.container .login .input-login{
+    height:40px;
+    padding-left:15px;
+    margin-bottom:5px;
+    border-radius:5px;
+    font-size:16px;
+}
+.container .login .btn-form{
+    height: 35px;
+    widht: 100px;
+    font-size:20px;
+    background-color:#3da9fc;
+    border:none;
+    color:white;
+}
+.content-form{
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+}
+.container .content{
+    grid-area:content;
+    text-align:center;
+}
+.container .footer{
+    grid-area:footer;
+    text-align:center;
+}
+
