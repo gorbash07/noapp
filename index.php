@@ -5,7 +5,7 @@
 	<meta name="viewport" contente="width=device-width, initial-scale=1.0">
 	<title>NOMINA APP</title>
 	<link rel="stylesheet" href="public/css/main.css">
-</head>
+</head>2
 <body>
   <div class="container">
     <div class="header">
