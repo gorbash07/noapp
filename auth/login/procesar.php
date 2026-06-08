@@ -1,12 +1,12 @@
 <?php
-
+/*
 $db_host = "localhost";    
 $db_user = "root";         
 $db_pass = "";             
 $db_name = "Nombre de la Base de Datos"; // <-- para el nombre de la base datos :v
 
 $conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
+*/
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
