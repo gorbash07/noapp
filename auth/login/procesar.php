@@ -1,5 +1,6 @@
 <?php
-/*
+// Comentado para evitar un error en pantalla al momento de subirlo, solo descomenten para probar
+/* 
 $db_host = "localhost";    
 $db_user = "root";         
 $db_pass = "";             
