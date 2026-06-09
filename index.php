@@ -16,7 +16,7 @@
       <form>
 	<div class="content-form">
       <a href="#" class="btn btn-consulta">Consulta de nomina</a>
-      <a href="#" class="btn btn-acceso">Acceder al sistema</a>
+      <a href="auth/login/index.php" class="btn btn-acceso">Acceder al sistema</a>
 	</div>
  </form>
     </div>

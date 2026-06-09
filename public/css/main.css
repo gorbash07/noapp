@@ -4,7 +4,7 @@
 
 h1 {
     text-align: center;
-    
+
 }
 
 .container {
@@ -19,34 +19,24 @@ h1 {
 
 }
 
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    margin: 0 auto;
+    max-width: 420px;
+}
+
 .container .header {
     grid-area: header;
     text-align: center;
 }
 
-.container .login {
-    grid-area: login;
-    background-color: #fffffe;
-    border: solid;
-    box-shadow: 5px 10px;
-}
 
-.container .login .input-login {
-    height: 40px;
-    padding-left: 15px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    font-size: 16px;
-}
 
-.container .login .btn-form {
-    height: 35px;
-    width: 100px;
-    font-size: 20px;
-    background-color: #3da9fc;
-    border: none;
-    color: white;
-}
+
 
 .content-form {
     display: flex;
@@ -70,17 +60,20 @@ h1 {
     text-decoration: none;
     padding: 20px;
 }
+
 .btn-consulta {
-    background-color:#139940;
+    background-color: #139940;
     color: #fffffe;
     margin-bottom: 10px;
     border-radius: 8px;
 }
-.btn-consulta:hover{
+
+.btn-consulta:hover {
     background-color: #09471e;
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
 .btn-acceso {
     background-color: #3da9fc;
     color: #fffffe;
