@@ -1,7 +1,7 @@
 <?php 
 $id_empleado = isset($_GET['id_empleado']) ? $_GET['id_empleado'] : 0;
 include ('../../../model/conexion.php'); 
-include ('../../../consultas/empleados/datos_empleados.php'); // Asegúrate de que este archivo existe
+include ('../../../consultas/empleados/datos_empleados.php'); 
 
 // Verifica si los datos del empleado están disponibles
 if (!isset($nombres)) {
@@ -63,12 +63,12 @@ if (!isset($nombres)) {
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="sexo">Sexo</label>
+                                                  <label for="sexo">Sexo</label>
                                                     <select name="sexo" class="form-control">
-                                                        <option value="" disabled>Seleccione...</option>
-                                                        <option value="Masculino" <?= ($sexo ?? '' == 'Masculino') ? 'selected' : ''; ?>>Masculino</option>
-                                                        <option value="Femenino" <?= ($sexo ?? '' == 'Femenino') ? 'selected' : ''; ?>>Femenino</option>
-                                                    </select>
+                                                       <option value="" disabled <?= empty($sexo) ? 'selected' : ''; ?>>Seleccione...</option>
+                                                       <option value="M" <?= (($sexo ?? '') == 'M') ? 'selected' : ''; ?>>Masculino</option>
+                                                       <option value="F" <?= (($sexo ?? '') == 'F') ? 'selected' : ''; ?>>Femenino</option>
+                                                   </select> 
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -138,7 +138,7 @@ if (!isset($nombres)) {
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary">Actualizar</button>
-                                                    <a href="<?= APP_URL;?>/app/empleados/index.php" class="btn btn-secondary">Cancelar</a>
+                                                    <a href="<?= APP_URL;?>/app/empleados/index.php">Cancelar</a>
                                                 </div>
                                             </div>
                                         </div>
