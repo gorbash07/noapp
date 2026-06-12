@@ -1,44 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLEADOS</title>
+    <link rel="stylesheet" href="../../public/css/empleados.css">
+</head>
+<body>
+
 <?php 
 include ('../../model/conexion.php'); 
 include ('../../consultas/empleados/listado_empleados.php'); 
 
-
 if (!isset($empleados)) {
-    //echo "La variable empleados no está definida.";
     exit; 
 }
 ?>
-<!-- Content Wrapper. Contains page content -->
+
 <div class="content-wrapper">
     <br>
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de empleados</h1>
+                <h1 class="text1">Listado de empleados</h1><br>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <h3>Empleados registrados</h3><br>
-                    <div>
-                        <a href="views/create.php">Crear nuevo empleado</a>
+                    <div class="header-tabla">
+                        <h3 class="text2">Empleados registrados</h3>
+                        <a href="views/create.php" class="create">Empleados +</a>
                     </div>
-                    <div>
-                        <table id="example1">
+                    <hr>
+                    <div class="tabla-wrapper">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Nro</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
+                                    <th>NRO</th>
+                                    <th>NOMBRE</th>
+                                    <th>APELLIDO</th>
                                     <th>DNI</th>
                                     <th>RIF</th>
-                                    <th>Fecha de nacimiento</th>
-                                    <th>Sexo</th>
+                                    <th>FECHA DE NACIMIENTO</th>
+                                    <th>SEXO</th>
                                     <th>TLF</th>
-                                    <th>Email</th>
-                                    <th>Direccion</th>
-                                    <th>Estado civil</th>
-                                    <th>Departamento</th>
-                                    <th>Cargo</th>
+                                    <th>EMAIL</th>
+                                    <th>DIRECCIÓN</th>
+                                    <th>ESTADO CIVIL</th>
+                                    <th>CARGO</th>
+                                    <th>DEPARTAMENTO</th>
+                                    <th>ACCIONES</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,28 +58,26 @@ if (!isset($empleados)) {
                                     $id_empleado = $empleado['id_empleado'];
                                     $contador_empleado++; ?>
                                     <tr>
-                                        <td><?=$contador_empleado;?></td>
-                                        <td><?=$empleado['nombres']?></td>
-                                        <td><?=$empleado['apellidos']?></td> 
-                                        <td><?=$empleado['cedula'];?></td>
-                                        <td><?=$empleado['rif'];?></td>
-                                        <td><?=$empleado['fecha_nacimiento'];?></td>
-                                        <td><?=$empleado['sexo'];?></td>
-                                        <td><?=$empleado['telefono'];?></td>
-                                        <td><?=$empleado['email'];?></td>
-                                        <td><?=$empleado['direccion'];?></td>
-                                        <td><?=$empleado['estado_civil'];?></td>
-                                        <td><?=$empleado['cargo'];?></td>
-                                        <td><?=$empleado['departamento'];?></td>
-                                        <td>
-                                            <div>
-                                                <a href="views/show.php?id_empleado=<?=$id_empleado;?>">Ver</a>
-                                                <a href="views/edit.php?id_empleado=<?=$id_empleado;?>">Editar</a>
-                                                <form action="<?=APP_URL;?>/app/empleados/controllers/delete.php" method="post" id="miFormulario<?=$id_empleado;?>">
-                                                    <input type="text" name="id_empleado" value="<?=$id_empleado;?>" hidden>
-                                                    <button type="submit">Eliminar</button>
-                                                </form>
-                                            </div>
+                                        <td><?= $contador_empleado; ?></td>
+                                        <td><?= $empleado['nombres'] ?></td>
+                                        <td><?= $empleado['apellidos'] ?></td> 
+                                        <td><?= $empleado['cedula']; ?></td>
+                                        <td><?= $empleado['rif']; ?></td>
+                                        <td><?= $empleado['fecha_nacimiento']; ?></td>
+                                        <td><?= $empleado['sexo']; ?></td>
+                                        <td><?= $empleado['telefono']; ?></td>
+                                        <td><?= $empleado['email']; ?></td>
+                                        <td><?= $empleado['direccion']; ?></td>
+                                        <td><?= $empleado['estado_civil']; ?></td>
+                                        <td><?= $empleado['cargo']; ?></td>
+                                        <td><?= $empleado['departamento']; ?></td>
+                                        <td class="acciones">
+                                            <a href="views/show.php?id_empleado=<?= $id_empleado; ?>" class="btn-ver">Ver</a>
+                                            <a href="views/edit.php?id_empleado=<?= $id_empleado; ?>" class="btn-editar">Editar</a>
+                                            <form action="<?= APP_URL; ?>/app/empleados/controllers/delete.php" method="post" class="form-eliminar">
+                                                <input type="text" name="id_empleado" value="<?= $id_empleado; ?>" hidden>
+                                                <button type="submit" class="btn-eliminar">Eliminar</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -78,11 +86,8 @@ if (!isset($empleados)) {
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
+        </div>
     </div>
-    <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
-
-<!-- Page specific script -->
+</body>
+</html>

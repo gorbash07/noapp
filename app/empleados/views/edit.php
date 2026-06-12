@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREAR EMPLEADO</title>
+  <link rel="stylesheet" href="../../../public/css/formularios.css">
+</head>
+<body>
+
 <?php 
 $id_empleado = isset($_GET['id_empleado']) ? $_GET['id_empleado'] : 0;
 include ('../../../model/conexion.php'); 
@@ -15,13 +25,13 @@ if (!isset($nombres)) {
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Empleados: <?= $nombres ?? '';?> <?= $apellidos ?? '';?></h1>
+                <h1 class="text1">Empleados: <?= $nombres ?? '';?> <?= $apellidos ?? '';?></h1>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-outline card-warning">
                         <div class="card-header">
-                            <h3 class="card-title">Complete los datos</h3>
+                            <h3 class="text2">Complete los datos</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?= APP_URL;?>/app/empleados/controllers/update.php" method="POST">
@@ -33,65 +43,43 @@ if (!isset($nombres)) {
                                                 <div class="form-group">
                                                     <label for="">Nombre</label>
                                                     <input type="text" name="nombres" class="form-control" value="<?= $nombres; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
+
                                                     <label for="">Apellido</label>
                                                     <input type="text" name="apellidos" class="form-control" value="<?= $apellidos ?? ''; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="">DNI</label>
+
+                                                     <label for="">DNI</label>
                                                     <input type="number" name="cedula" class="form-control" value="<?= $cedula ?? ''; ?>">
+
+                                                     <label for="">RIF</label>
+                                                    <input type="text" name="rif" class="form-control" value="<?= $rif ?? ''; ?>">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="">RIF</label>
-                                                    <input type="text" name="rif" class="form-control" value="<?= $rif ?? ''; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
                                                     <label for="">Fecha de nacimiento</label>
                                                     <input type="date" name="fecha_nacimiento" class="form-control" value="<?= $fecha_nacimiento ?? ''; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                  <label for="sexo">Sexo</label>
+
+                                                    <label for="sexo">Sexo</label>
                                                     <select name="sexo" class="form-control">
                                                        <option value="" disabled <?= empty($sexo) ? 'selected' : ''; ?>>Seleccione...</option>
                                                        <option value="M" <?= (($sexo ?? '') == 'M') ? 'selected' : ''; ?>>Masculino</option>
                                                        <option value="F" <?= (($sexo ?? '') == 'F') ? 'selected' : ''; ?>>Femenino</option>
                                                    </select> 
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="">Teléfono</label>
+
+                                                   <label for="">Teléfono</label>
                                                     <input type="number" name="telefono" class="form-control" value="<?= $telefono ?? ''; ?>">
+
+                                                    <label for="">Email</label>
+                                                    <input type="email" name="email" class="form-control" value="<?= $email ?? ''; ?>">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="">Email</label>
-                                                    <input type="email" name="email" class="form-control" value="<?= $email ?? ''; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="">Dirección</label>
-                                                    <input type="text" name="direccion" class="form-control" value="<?= $direccion ?? ''; ?>">
-                                                </div>
-                                            </div>
-                                            <?php
+                                                <?php
                                        // Se define el arreglo con las opciones
                                         $opciones_estado_civil = [
                                               ['estado_civil' => 'Soltero/a'],
@@ -104,8 +92,7 @@ if (!isset($nombres)) {
                                         ?>
                                         <div class="form-group"> 
                                             <label for="estado_civil">Estado civil</label> 
-                                            <div class="form-inline"> 
-                                                <select name="estado_civil" id="estado_civil" class="form-control" style="width: 198px"> 
+                                                <select name="estado_civil" id="estado_civil" class="form-control"> 
                                                     <option value="" disabled <?= empty($estado_civil_db) ? 'selected' : ''; ?>>Seleccione...</option>
                                                     <?php foreach ($opciones_estado_civil as $estado) { 
                                                         // Comparamos el valor del array con el valor guardado en la base de datos
@@ -116,18 +103,13 @@ if (!isset($nombres)) {
                                                         </option> 
                                                         <?php } ?> 
                                                     </select>
-                                                </div> 
-                                            </div>
-                                       <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
+
+                                                   <label for="">Dirección</label>
+                                                    <input type="text" name="direccion" class="form-control" value="<?= $direccion ?? ''; ?>">
+                                                    
                                                     <label for="">Cargo</label>
                                                     <input type="text" name="cargo" class="form-control" value="<?= $cargo ?? ''; ?>">
-                                                </div>
-                                            </div>
-                                        </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
+
                                                     <label for="">Departamento</label>
                                                     <input type="text" name="departamento" class="form-control" value="<?= $departamento ?? ''; ?>">
                                                 </div>
@@ -137,8 +119,8 @@ if (!isset($nombres)) {
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary">Actualizar</button>
-                                                    <a href="<?= APP_URL;?>/app/empleados/index.php">Cancelar</a>
+                                                    <button type="submit" id="btn-registrar">Actualizar</button>
+                                                    <a href="<?= APP_URL;?>/app/empleados/index.php" id="btn-cancelar">Cancelar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,3 +137,5 @@ if (!isset($nombres)) {
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+</body>
+</html>

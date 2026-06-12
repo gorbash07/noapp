@@ -1,0 +1,150 @@
+/* ===== TIPOGRAFÍA GENERAL ===== */
+.text1,
+.text2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+.text1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* ===== ENCABEZADO DE LA TABLA (título + botón) ===== */
+.header-tabla {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* ===== BOTÓN CREAR EMPLEADO ===== */
+.create {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.create:hover {
+  background-color: #1a252f;
+}
+
+/* ===== CONTENEDOR DE LA TABLA ===== */
+.tabla-wrapper {
+  overflow-x: auto;
+}
+
+/* ===== ESTILOS DE LA TABLA ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Celdas de encabezado y datos */
+.table th,
+.table td {
+  padding: 12px 10px;
+  text-align: center;         
+  vertical-align: middle;
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+
+/* Encabezado */
+.table thead tr {
+  background-color: #3b5998;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Efecto cebra en filas */
+.table tbody tr:nth-of-type(even) {
+  background-color: #f5f7fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e8edf5;
+  transition: background-color 0.2s ease;
+}
+
+/* ===== BOTONES DE ACCIÓN (Ver, Editar, Eliminar) ===== */
+.acciones {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.acciones a,
+.acciones button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  width: 70px;               /* <-- MISMO ANCHO para los 3 */
+  height: 34px;              /* <-- MISMA ALTURA para los 3 */
+  padding: 0;
+  text-align: center;
+  line-height: 34px;
+}
+
+.acciones a:hover,
+.acciones button:hover {
+  opacity: 0.85;
+}
+
+/* Botón VER */
+.btn-ver {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Botón EDITAR */
+.btn-editar {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+/* Botón ELIMINAR */
+.btn-eliminar {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Formulario dentro de la celda */
+.form-eliminar {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
